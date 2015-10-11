@@ -5,7 +5,7 @@ import java.util.function.Function;
 
 public class CalculateIntegral {
 
-    private final int tmpFactor = 10;
+    private final int tmpFactor = 1;
     private final static MyRandomizer r = new MyRandomizer();
     private final Function<Double, Double>[] fun =
             new Function[]{
@@ -31,10 +31,10 @@ public class CalculateIntegral {
                     }
             };
     private final double BEGIN_X[] = {0, 0, 0, 0};
-    private final double DELTA_X[] = {1, Math.PI, 1000, 1};
+    private final double DELTA_X[] = {1, Math.PI, 100, 1};
     private final double BEGIN_Y[] = {min(0), min(1), 0, min(3)};
     private final double DELTA_Y[] =
-            {max(0) - min(0), max(1) - min(1), 1000, max(3) - min(3)};
+            {max(0) - min(0), max(1) - min(1), 100, max(3) - min(3)};
 
     public void calc() {
         calc(0);
