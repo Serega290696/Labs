@@ -1,4 +1,6 @@
-package com.mylab;
+package com.mylab.model;
+
+import com.mylab.MainController;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -18,6 +20,7 @@ public class Main {
             "1. Check Java's generator.\n" +
             "2. Check new random numbers generator.\n" +
             "3. Calculate the integral.\n" +
+            "4. Launch task#4.\n" +
             "0. Exit\n" +
             "Enter number: ";
     private static final String SEPARATOR = "=======================================\n\n";
@@ -47,12 +50,7 @@ public class Main {
 //            }
             switch (Integer.parseInt(args[0])) {
                 case 1:
-                    if (args.length > 1) {
-                        if (args[1] == null)
-                            args[1] = "1000";
-                        amount = Integer.parseInt(args[1]);
-                    } else amount = 1000;
-                    amount = 1000;
+                    amount = 100000;
                     randMass = new double[amount];
                     for (int i = 0; i < amount; i++) {
                         randMass[i] = Math.random();
@@ -61,10 +59,7 @@ public class Main {
                     validator.valid(randMass, 0, 1);
                     break;
                 case 2:
-                    if (args.length > 1) {
-                        amount = Integer.parseInt(args[1]);
-                    } else amount = 1000;
-                    amount = 1000;
+                    amount = 100000;
                     randMass = new double[amount];
                     for (int i = 0; i < amount; i++) {
                         randMass[i] = random.nextDouble();
@@ -101,11 +96,13 @@ public class Main {
                     System.out.println("\nResult:");
                     integral.calc(intNumber - 1);
                     break;
+                case 4:
+                    MainController.startApp();
                 default:
                     System.out.println("Wrong input!");
             }
             System.out.print("Press 'Enter' to resume. . .");
-            reader.read();
+            s = reader.readLine();
             System.out.printf(SEPARATOR);
 
         }

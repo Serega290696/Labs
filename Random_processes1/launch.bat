@@ -1,1 +1,1 @@
-java -jar jarfile.jar
+java -jar lab.jar

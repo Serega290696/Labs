@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.chart.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="508.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mylab.view.MainWindowController">
+   <children>
+      <BarChart fx:id="chart" animated="false" layoutX="14.0" layoutY="104.0" prefHeight="329.0" prefWidth="617.0">
+        <xAxis>
+          <CategoryAxis prefHeight="19.0" prefWidth="560.0" side="BOTTOM" fx:id="xord" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis fx:id="yord" side="LEFT" />
+        </yAxis>
+      </BarChart>
+      <Label fx:id="warning" layoutX="216.0" layoutY="57.0" prefHeight="17.0" prefWidth="199.0" textFill="RED" />
+      <Button defaultButton="true" layoutX="95.0" layoutY="443.0" mnemonicParsing="false" onAction="#generateAction" prefHeight="51.0" prefWidth="460.0" text="Генерировать случайные числа">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Button>
+      <TextField fx:id="amount" layoutX="216.0" layoutY="20.0" text="1000000">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </TextField>
+      <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="31.0" layoutY="25.0" prefHeight="27.0" prefWidth="180.0" text="Размер массива:" textAlignment="RIGHT">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="31.0" layoutY="79.0" text="Количество отрезков:" textAlignment="RIGHT">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="amountSegments" layoutX="216.0" layoutY="74.0" text="10">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </TextField>
+      <Label fx:id="warning2" layoutX="216.0" layoutY="110.0" prefHeight="17.0" prefWidth="199.0" textFill="RED" />
+   </children>
+</Pane>

@@ -1,4 +1,4 @@
-package com.mylab;
+package com.mylab.model;
 
 import java.util.function.Function;
 
@@ -23,6 +23,9 @@ public class MyRandomizer {
         return (seed = function.apply(seed)) % newMod;
     }
 
+    public double random() {
+        return nextDouble();
+    }
     public double nextDouble() {
         return (double)(seed = function.apply(seed))/MOD;
     }

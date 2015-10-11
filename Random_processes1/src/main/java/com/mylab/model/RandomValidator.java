@@ -1,10 +1,11 @@
-package com.mylab;
+package com.mylab.model;
 
 /**
  * Created by serega.
  */
 public class RandomValidator {
 
+    private int amountSegments = 10;
 
     public void valid(long[] mass, double b, double s) {
         final int segmentNumber = 10;
@@ -21,8 +22,8 @@ public class RandomValidator {
         }
     }
 
-    public void valid(double[] mass, double b, double e) {
-        final int segmentNumber = 5;
+    public int[] valid(double[] mass, double b, double e) {
+        final int segmentNumber = amountSegments;
         double bS = b;
         double eS = e;
         int result[] = new int[segmentNumber];
@@ -32,9 +33,22 @@ public class RandomValidator {
 //                System.out.println("\t\t" + (bS + (double)(eS - bS) / segmentNumber * (i + 1)));
             result[i]++;
         }
+        double avrDeviation = 0;
         for (int x : result) {
             System.out.println(x);
+            avrDeviation += (double) Math.abs(x - mass.length / segmentNumber);
         }
+        System.out.println(avrDeviation);
+        avrDeviation = avrDeviation / segmentNumber;
+        System.out.println("Average deviation / points amount = " + ((double) avrDeviation / mass.length));
+        return result;
     }
 
+    public int getAmountSegments() {
+        return amountSegments;
+    }
+
+    public void setAmountSegments(int amountSegments) {
+        this.amountSegments = amountSegments;
+    }
 }
